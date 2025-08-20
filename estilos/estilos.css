@@ -1,0 +1,43 @@
+/*RESETEO: */
+/*El icono "*" apunta a TODOS LOS ELEMENTOS, o sea todad las etiquetas, clases, identidades...*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Este es un selector de una etiqueta: */
+body{
+    background-color: skyblue;
+}
+/*Este es un selector de una clase: */
+/*siempre este tipo de selector inicia con "." */
+.contenedor{
+    width: 900px;
+    background-color: white;
+    margin: 0 auto;
+}
+.span1{
+    background-color: red;
+}
+.span2{
+    background-color: orange;
+}
+.mayusculas{
+    text-transform: uppercase;
+}
+.contenido{
+    border: 1px solid #000;
+}
+
+/*Este es un selector de una identidad: */
+/*Las identidades sirven para identificar un elemento único y su valor no se repite en toda la página*/
+#unico{
+    background-color: yellow;
+}
+
+/*Este es un selector compuesto, porque se anida para modificar el estilo a un elemento específico sin poner clase o id*/
+.contenido h2{
+    background-color: red;
+}
+
+
