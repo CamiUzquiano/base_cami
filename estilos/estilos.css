@@ -1,8 +1,13 @@
+ /*los valores en CSS pueden ser relativos o absolutos, o sea si quiero que el ancho se modifique al
+tamaño de la pantalla se pone un porcentaje "%" pero los absolutos son una medida específica y eso se mide en "px"*/
+
 /*RESETEO: */
 /*El icono "*" apunta a TODOS LOS ELEMENTOS, o sea todad las etiquetas, clases, identidades...*/
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /*estas regla hace que el ancho y alto midan lo que se dice y si agregamos margenes
+    no se aumente de tamanño, sino que con el contenido se aumente los margenes para adentro y no para afuera*/
 }
 
 /*Este es un selector de una etiqueta: */
@@ -15,6 +20,7 @@ body{
     width: 900px;
     background-color: white;
     margin: 0 auto;
+    padding: 60px;
 }
 .span1{
     background-color: red;
@@ -25,19 +31,43 @@ body{
 .mayusculas{
     text-transform: uppercase;
 }
-.contenido{
-    border: 1px solid #000;
-}
 
+/*Esta clase es de un div, un elemento de bloque*/
+.contenido{
+    /*border es un borde interno, entra al modelo de caja*/
+    border-top: 2px solid #000; /*con esta propiedad le estamos asignando un borde al elemento de bloque*/
+    border-bottom: 3px dotted blue; /*los bordes siempre deben tener 3 propiedades tamaño, tipo y color*/
+    border-right: 4px dashed rgb(50, 200, 100);
+    border-left: 5px double purple;
+    border-radius: 5px; /*modifica el redondeo de los bordes*/
+    border-top-left-radius: 50px; 
+    /*los tipos de borde pueden ser solid=una linea completa, dotted=linea punteada, dashed=linea segmentada, double=doble linea*/
+    outline: 5px solid yellow; /*es un borde externo, fuera del contenido*/
+    width: 600px; /*esta es la cantidad del "ancho"*/
+    height: auto;
+    margin: 0px auto; /*esta regla hcae que se centre bloques*/
+    padding: 40px;
+    background-color: beige;
+    box-shadow: 10px -20px 20px rgba(0, 0, 0, 0.5); /*en la sombra hay 4 valores: x (posicion horizontal), y (posicion vertical), blur (difuminado) y color*/
+}
+/*Este es un selector compuesto, porque se anida para modificar el estilo a un elemento específico sin poner clase o id*/
+.contenido h2{
+    background-color: red;
+    margin-bottom: 20px;
+}
+.contenido p{
+    margin: 0px 60px 20px 60px;
+}
+.contenido a{
+    background-color: grey;
+    display: block; /*con esta porpiedad convertimos el elemento de linea en uno de bloque*/
+    margin: 0 auto;
+    color: white;
+}
 /*Este es un selector de una identidad: */
 /*Las identidades sirven para identificar un elemento único y su valor no se repite en toda la página*/
 #unico{
     background-color: yellow;
-}
-
-/*Este es un selector compuesto, porque se anida para modificar el estilo a un elemento específico sin poner clase o id*/
-.contenido h2{
-    background-color: red;
 }
 
 
