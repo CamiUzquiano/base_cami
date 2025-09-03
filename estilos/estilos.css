@@ -1,6 +1,22 @@
  /*los valores en CSS pueden ser relativos o absolutos, o sea si quiero que el ancho se modifique al
 tamaño de la pantalla se pone un porcentaje "%" pero los absolutos son una medida específica y eso se mide en "px"*/
 
+/*Definición de un alcance de algo, root es raíz o sea que llegaría a todos los elementos*/
+/*dentro de root establecemos variables para usar en todo el proyecto*/
+:root{
+    /*VARIABLES DE COLOR*/
+    --amarillo-patito: #FFE27A;
+    --aqua: #A9FFC1;
+    --fucsia-medio: #DE5E92;
+    --blanquito: #FFF7D8;
+    --gris-azulito: #EBFFF1;
+    /*ESPACIADORES*/
+    --padding-1: 14px;
+    --padding-2: 42px;
+    --gap-1: 10px;
+    
+}
+
 /*RESETEO: */
 /*El icono "*" apunta a TODOS LOS ELEMENTOS, o sea todad las etiquetas, clases, identidades...*/
 *{
@@ -12,15 +28,46 @@ tamaño de la pantalla se pone un porcentaje "%" pero los absolutos son una medi
 
 /*Este es un selector de una etiqueta: */
 body{
-    background-color: skyblue;
+    background-color: var(--gris-azulito); /* "var(--)" de esta forma llamamos a una variable en este caso de color*/
 }
+
+/*HEADER*/
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--fucsia-medio);
+    color: var(--gris-azulito);
+    padding: var(--padding-1);
+}
+header h1 a{
+    text-decoration: none;
+    color: var(--gris-azulito);
+
+}
+header nav ul{
+    display: flex;
+    list-style: none; /*con esta instruccion quitamos los puntos que va predefinido para hacer una lista*/
+    gap: var(--gap-1); /*es como usar el medianil o sea separa los elementos*/
+}
+header nav ul li a{
+    text-decoration: none;
+    color:var(--gris-azulito);
+    display: block;
+    padding: var(--padding-1);
+    border-radius: 5px;
+}
+header nav ul li a:hover{
+    background-color: var(--amarillo-patito);
+    color: var(--fucsia-medio);
+}
+/*FIN DEL HEADER*/
+
 /*Este es un selector de una clase: */
 /*siempre este tipo de selector inicia con "." */
 .contenedor{
     width: 900px;
-    background-color: white;
+    background-color: var(--blanquito);
     margin: 0 auto;
-    padding: 60px;
 }
 .span1{
     background-color: red;
@@ -61,13 +108,79 @@ body{
 .contenido a{
     background-color: grey;
     display: block; /*con esta porpiedad convertimos el elemento de linea en uno de bloque*/
-    margin: 0 auto;
+    text-align: center;
     color: white;
+    border-radius: 8px; /*para redondear las esquinas del contenedor*/
+    padding: 12px 16px; /*margen interno*/
+    text-decoration: none; /*esto quita el subrayado automatico que viene predefinido de la etiqueta "A"*/
+    text-transform: uppercase; /*se convierte todo en mayusculas*/
+    letter-spacing: 0.05em; /*espaciado entre letras*/
+    width: 250px; /*medida específica para reducir su relleno, controla el ancho*/
+    margin:  0 auto 20px auto; /*espaciado entre elementos desde arriba a la derecha*/
 }
+
+/*Aqui abajo veremos una pseudo clase = HOVER*/
+/*HOVER es una pseudo clase o estado de lo que pasa cuando el curso está encima del elemento*/
+/*la diferencia entre una clase y una pseudo clase es que esta pseudo clase es una clase más específica y detallada*/
+.contenido a:hover {
+    /*para llamar a las pseudo clase se llama a la etiqueta y luego con ":" se accede a las pseudo clase*/
+    background-color: skyblue; /*esto hará que cuando pasemos encima el color de fondo cambie a azul*/
+    color: #000;
+}
+
+.contenido .ejemplo{
+    padding: 10px;
+    border: 1px solid black;
+    display: flex; /*convertimos los elementos de bloque en elementos de línea*/
+    /* "flex-direction: row;" = permite que los elementos de linea de alinien vertical u horizontalmente sin necesariamente ser elemento de bloque */
+    justify-content: space-around; /*hace que los elementos se justifiquen ya sea al costado izquierdo que es start. al costado derecho que es end y al centro qeu es center*/
+    
+}
+
+.contenido .ejemplo div{
+    flex-grow: 1;
+    height: 100px;
+    background-color: blueviolet;
+    border: 1px solid white;
+    color:azure;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.contenido .ejemplo div:nth-child(2){
+    flex-grow: 2;
+}
+
 /*Este es un selector de una identidad: */
 /*Las identidades sirven para identificar un elemento único y su valor no se repite en toda la página*/
 #unico{
     background-color: yellow;
 }
 
-
+/*FOOTER*/
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--fucsia-medio);
+    color: var(--gris-azulito);
+    padding: var(--padding-2) var(--padding-1);
+}
+footer p{
+    color: var(--gris-azulito);
+}
+footer nav ul{
+    display: flex;
+    list-style: none;
+    gap: var(--gap-1);
+}
+footer nav ul li a{
+    text-decoration: none;
+    color: var(--gris-azulito);
+    border-radius: 5px;
+    padding: var(--padding-1);
+}
+footer nav ul li a:hover{
+    background-color: var(--amarillo-patito);
+    color: var(--fucsia-medio);
+}
+/*FIN DEL FOOTER*/
