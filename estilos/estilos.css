@@ -3,6 +3,8 @@ tamaño de la pantalla se pone un porcentaje "%" pero los absolutos son una medi
 
 /*Definición de un alcance de algo, root es raíz o sea que llegaría a todos los elementos*/
 /*dentro de root establecemos variables para usar en todo el proyecto*/
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root{
     /*VARIABLES DE COLOR*/
     --amarillo-patito: #FFE27A;
@@ -14,7 +16,16 @@ tamaño de la pantalla se pone un porcentaje "%" pero los absolutos son una medi
     --padding-1: 14px;
     --padding-2: 42px;
     --gap-1: 10px;
-    
+    /*ESCALA TIPOGRAFICA*/
+    --h1: 47.78px;
+    --h2: 39.81px;
+    --h3: 33.18px;
+    --h4: 27.65px;
+    --h5: 23.04px;
+    --h6: 19.2px;
+    --p: 16px;
+    --small: 13.33px;
+    --xsmall: 11.11px;
 }
 
 /*RESETEO: */
@@ -29,6 +40,13 @@ tamaño de la pantalla se pone un porcentaje "%" pero los absolutos son una medi
 /*Este es un selector de una etiqueta: */
 body{
     background-color: var(--gris-azulito); /* "var(--)" de esta forma llamamos a una variable en este caso de color*/
+    font-family: "Sour Gummy", sans-serif;
+}
+
+h1{
+    font-family: "Sour Gummy";
+    font-size: var(--h1);
+    font-weight: 400;
 }
 
 /*HEADER*/
@@ -184,3 +202,28 @@ footer nav ul li a:hover{
     color: var(--fucsia-medio);
 }
 /*FIN DEL FOOTER*/
+
+/*INDEX.HTML*/
+/*HERO*/
+.hero{
+/*POSICIÓN STATIC
+  POSICIÓN RELATIVE
+  POSICIÓN ABSOLUTE
+  POSICIÓN FIXED
+  
+  Porpiedades para mover el objeto de la posición en la que se le asigno que son:
+  TOP - LEFT - BOTTOM - RIGHT*/
+    position: relative;
+}
+.hero img{
+    display: block;
+    width: 100%;
+}
+.hero p{
+    width: 300px;
+    padding: var(--padding-2);background-color: var(--amarillo-patito);
+    font-size: var(--h4);
+    position: absolute;
+    bottom: var(--padding-1);
+    left: var(--padding-1);
+}
