@@ -9,9 +9,15 @@
     Aqui abajo usamos esta tercera forma: 
     <link rel="stylesheet" href=""> -->
     <link rel="stylesheet" href="estilos/estilos.css">
+    <!--EJEMPLO DE USAR JS CON DOCUMENTO EXTERNO
+    La tercera forma se enlaza el documento aparte con el documento html así:
+    <script src="funciones/funciones.js"></script> -->
+    <script src="funciones/funciones.js"></script>
 </head>
 <body>
 <div class="contenedor">
+    <!--EJEMPLO DE USAR JS EN LINEA:
+        <div class="contenedor" onclick="alert();">-->
     <!-- Es el divisor por defecto-->
     <header>
         <!-- Header es un contenedor para los elementos que identifican este contenido. Puede ir el menú y otros-->
@@ -85,6 +91,11 @@
     </footer>
 </div>
 
-
+<!--EJEMPLO DE USAR JS EN EL DOCUMENTO
+se usa su propia etiqueta recomendado usar al final del documento:
+<script>
+    document.querySelector(".hero").style.display("none");
+    alert();
+</script>-->
 </body>
 </html>
